@@ -39,7 +39,7 @@
     Target="/app/data"
     Default="/mnt/user/appdata/e-note-ion/data"
     Mode="rw"
-    Description="Optional but recommended. Path on the host for persistent runtime state — currently the integration health event log read by the /health endpoint (7 days of history). The container declares /app/data as a volume, so leaving this blank still works, but Unraid discards the anonymous volume whenever the container is recreated: every image update wipes your health history. Map it to keep that history across updates."
+    Description="Optional. Path on the host for persistent runtime state — currently the integration health event log behind the /health endpoint, which keeps a rolling 7 days. Leave blank for the default: an anonymous volume that Unraid recreates on container update, so health history starts fresh after each update. Set a path only if you want that history to carry across updates."
     Type="Path"
     Display="advanced"
     Required="false"
