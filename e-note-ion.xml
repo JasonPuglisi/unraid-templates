@@ -35,6 +35,17 @@
     Mask="false"/>
 
   <Config
+    Name="Runtime data directory"
+    Target="/app/data"
+    Default="/mnt/user/appdata/e-note-ion/data"
+    Mode="rw"
+    Description="Optional. Path on the host for persistent runtime state — currently the integration health event log behind the /health endpoint, which keeps a rolling 7 days. Leave blank for the default: an anonymous volume that Unraid recreates on container update, so health history starts fresh after each update. Set a path only if you want that history to carry across updates."
+    Type="Path"
+    Display="advanced"
+    Required="false"
+    Mask="false"/>
+
+  <Config
     Name="Timezone"
     Target="TZ"
     Default="America/Los_Angeles"
